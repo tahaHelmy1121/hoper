@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "781612852839",
+    "project_id": "hoper-d43fb",
+    "storage_bucket": "hoper-d43fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781612852839:android:8d439f5cc9c51d522116c2",
+        "android_client_info": {
+          "package_name": "com.example.hoper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3_1-RZi5wul1avnsJ9eZ9LxkPRuy5J7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
