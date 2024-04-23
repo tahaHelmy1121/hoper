@@ -76,6 +76,7 @@ class _SearchViewState extends State<SearchView> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
+
                           InkWell(
                               onTap: () {
                                 context.pop();
