@@ -7,6 +7,8 @@ import 'package:hoper/busines_logic_layer/home/home_cubit.dart';
 import 'package:hoper/busines_logic_layer/home/home_state.dart';
 import 'package:hoper/busines_logic_layer/profile/profile_cubit.dart';
 import 'package:hoper/busines_logic_layer/profile/profile_state.dart';
+import 'package:hoper/helper/app_locale.dart';
+import 'package:hoper/helper/app_strings.dart';
 import 'package:hoper/presntion_layer/cart/cart_view.dart';
 import 'package:hoper/presntion_layer/payment.dart';
 import 'package:hoper/presntion_layer/favourite/favouriteview.dart';
@@ -90,7 +92,8 @@ class _CustomNavBarState extends State<CustomNavBar> {
                     Icons.home_max_sharp,
                     color: Colors.black,
                   ),
-                  label: "Home"),
+                  //AppStrings.welcomeToChefApp.tr(context)
+                  label:"home"),
               BottomNavigationBarItem(
                   backgroundColor: HexColor("#4FCC7F"),
                   icon: Icon(Icons.shopping_cart_rounded),

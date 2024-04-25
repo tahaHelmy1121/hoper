@@ -162,7 +162,7 @@ class _DrewSubCategoryState extends State<DrewSubCategory> {
                                 .end,
                             children: [
                               SizedBox(
-                                height: 100.h,
+                                height: 120.h,
                               ),
                               Container(
                                   child: InkWell(

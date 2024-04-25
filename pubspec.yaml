@@ -103,6 +103,8 @@ flutter:
   assets:
      - assets/images/
      - assets/lotti/
+     - assets/translations/ar.json
+     - assets/translations/en.json
 
        #   - images/a_dot_ham.jpeg
 

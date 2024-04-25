@@ -12,6 +12,7 @@ import 'package:hoper/shared_widget/statusapp/loadingScreen.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../shared_widget/app_style.dart';
+import '../auth/widget_auth/drew_any_from_field.dart';
 import '../home/widget/search.dart';
 
 class SearchView extends StatefulWidget {
@@ -69,20 +70,23 @@ class _SearchViewState extends State<SearchView> {
             children: [
               drewBackGroundColors(),
               Container(
-                margin: EdgeInsets.only(top: 30.sp, right: 15.sp),
+                margin: EdgeInsets.only(top: 30.sp, right: 2.sp),
                 child: Column(
                   children: [
                     Container(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-
+                          InkWell(
+                            onTap: () {
+                            },
+                            child: Image.asset("assets/images/search.png", color: Colors.black26,),),
                           InkWell(
                               onTap: () {
                                 context.pop();
                               },
                               child: Image.asset("assets/images/back.png",
-                                  width: 45.w, height: 60.h, color: Colors.black26,),),
+                                  width: 20.w, height: 40.h, color: Colors.black26,),),
                           drewCustomSearchField(
                               context: context,
                               onTab: (val) {

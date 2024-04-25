@@ -7,6 +7,7 @@ import 'package:hoper/presntion_layer/chat/chat_view.dart';
 import 'package:hoper/presntion_layer/home/home_view.dart';
 
 import '../busines_logic_layer/home/home_cubit.dart';
+import '../busines_logic_layer/local_cubit/global_cubit.dart';
 import '../presntion_layer/estate/get_all_address.dart';
 import '../presntion_layer/pages.dart';
 import 'app_style.dart';
@@ -235,6 +236,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
             ListTile(
               leading: InkWell(
                   onTap: (){
+                    BlocProvider.of<GlobalCubit>(context)
+                        .changeLang("en");
                     BlocProvider.of<HomeCubit>(context)
                         .changeLang("1");
                   },
@@ -244,6 +247,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
             ListTile(
               leading: InkWell(
                   onTap: (){
+                    BlocProvider.of<GlobalCubit>(context)
+                        .changeLang("ar");
                     BlocProvider.of<HomeCubit>(context)
                         .changeLang("2");
                   },

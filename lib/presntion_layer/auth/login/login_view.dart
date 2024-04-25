@@ -8,6 +8,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:hoper/busines_logic_layer/login/login_cubit.dart';
 import 'package:hoper/busines_logic_layer/login/login_state.dart';
+import 'package:hoper/helper/app_strings.dart';
 import 'package:hoper/helper/extenstion.dart';
 import 'package:hoper/presntion_layer/auth/register_view/register_view.dart';
 import 'package:hoper/shared_widget/app_style.dart';
@@ -26,23 +27,6 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future signInWithGoogle({required BuildContext context}) async {
-      // Trigger the authentication flow
-      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-
-      // Obtain the auth details from the request
-      final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
-
-      // Create a new credential
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth?.accessToken,
-        idToken: googleAuth?.idToken,
-      );
-
-      // Once signed in, return the UserCredential
-      await FirebaseAuth.instance.signInWithCredential(credential);
-      Navigator.push(context,MaterialPageRoute(builder: (_)=>CustomNavBar()));
-    }
     return Scaffold(
       body: BlocProvider(
         create: (context) => LoginCubit(LoginState.initial()),
@@ -70,7 +54,8 @@ class LoginView extends StatelessWidget {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
       // Obtain the auth details from the request
-      final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+      final GoogleSignInAuthentication? googleAuth =
+          await googleUser?.authentication;
 
       // Create a new credential
       final credential = GoogleAuthProvider.credential(
@@ -80,8 +65,10 @@ class LoginView extends StatelessWidget {
 
       // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithCredential(credential);
-      Navigator.push(context,MaterialPageRoute(builder: (_)=>CustomNavBar()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (_) => CustomNavBar()));
     }
+
     return SingleChildScrollView(
       child: Form(
         key: context.read<LoginCubit>().key,
@@ -102,7 +89,8 @@ class LoginView extends StatelessWidget {
                           child: Text(
                               "يمكنك الاطلاع على العقارات والمشاريع الجديدة لدينا  والحجز بسهوله",
                               textAlign: TextAlign.end,
-                              style: style1Font14Weight400)),
+                              style: style1Font14Weight400.copyWith(
+                                  overflow: TextOverflow.ellipsis))),
                     ],
                   ),
                 ],
@@ -116,7 +104,7 @@ class LoginView extends StatelessWidget {
 
             drewAnyTextFromField(
               icon: Icon(Icons.email_outlined),
-              valid: "ادخال الهاتف",
+              valid: AppStrings.pleaseEnterValidEmail,
               hint: "البريد الاكترونى",
               context: context,
               myController: context.read<LoginCubit>().emailEdtingController,
@@ -169,7 +157,7 @@ class LoginView extends StatelessWidget {
             Row(
               children: [
                 InkWell(
-                  onTap: (){
+                  onTap: () {
                     signInWithGoogle(context: context);
                   },
                   child: Container(
