@@ -21,6 +21,7 @@ import 'package:hoper/busines_logic_layer/register/register_cubit.dart';
 import 'package:hoper/busines_logic_layer/register/register_state.dart';
 import 'package:hoper/busines_logic_layer/upload_images/upload_images_cubit.dart';
 import 'package:hoper/presntion_layer/splashview.dart';
+import 'package:hoper/shared_widget/drew_nav_bar.dart';
 
 import 'busines_logic_layer/local_cubit/global_cubit.dart';
 import 'helper/app_locale.dart';
@@ -73,7 +74,7 @@ class HoperApp extends StatelessWidget {
               builder: DevicePreview.appBuilder,
               locale: Locale(BlocProvider.of<GlobalCubit>(context).langCode),
               debugShowCheckedModeBanner: false,
-              home: SplashView(),
+              home: CustomNavBar(),
             );
           },
         ),
